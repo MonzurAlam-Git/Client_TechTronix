@@ -1,17 +1,24 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './Pages/Components/Home/Home';
+import Navbar from './Pages/Shared/Navbar';
+import 'swiper/css';
+
+
 
 function App() {
   return (
     <div className="App">
-      <h1>TechTronix</h1>
-      {/* Header  */}
-      {/* Banner  */}
-      {/* Parts  */}
-      {/* Business Summary */}
-      {/* Reviews  */}
-      {/* Footer  */}
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="home" element={<Home></Home>}></Route>
+      </Routes>
+
     </div>
   );
 }
+
+
 
 export default App;
