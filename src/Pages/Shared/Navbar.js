@@ -27,6 +27,7 @@ const Navbar = () => {
                 <img className='h-24' style={{ height: '250px' }} src="https://i.ibb.co/xSrmRyC/Whats-App-Image-2023-01-09-at-7-09-16-PM-removebg-preview.jpg" alt="" />
             </div>
             <div className="navbar-end hidden lg:flex">
+
                 <ul className="menu menu-horizontal px-1">
                     <li><a>Item 1</a></li>
                     <li tabIndex={0}>
