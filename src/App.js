@@ -9,6 +9,7 @@ import ContactUs from './Pages/Components/Home/ContactUs';
 import Login from './Pages/Components/Login/Login';
 import Register from './Pages/Components/Login/Register';
 import ForgetPassword from './Pages/Components/Login/ForgetPassword';
+import NotFound from './Pages/NotFound';
 
 
 
@@ -17,16 +18,19 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <Routes>
+        {/* Home Page related Routing  */}
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="home" element={<Home></Home>}></Route>
         <Route path="partDetails" element={<PartDetails></PartDetails>}></Route>
         <Route path="orderProcess" element={<OrderProcess></OrderProcess>}></Route>
         <Route path="contactUs" element={<ContactUs></ContactUs>}></Route>
+        {/* Login Page related Routing  */}
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="register" element={<Register></Register>}></Route>
         <Route path="forgetPassword" element={<ForgetPassword></ForgetPassword>}></Route>
+        {/* Error 404 related Routing  */}
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
-
     </div>
   );
 }
