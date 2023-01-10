@@ -17,7 +17,7 @@ const Home = () => {
             {/* Business Summary */}
             <BuisnessSummary></BuisnessSummary>
             {/* Reviews  */}
-            <Reviews></Reviews>
+            <Reviews ></Reviews>
             {/* Order process */}
             <OrderProcess></OrderProcess>
             {/* Contact Us  */}

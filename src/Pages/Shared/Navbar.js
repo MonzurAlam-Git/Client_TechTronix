@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -12,12 +13,12 @@ const Navbar = () => {
                         <li><a >Item 1</a></li>
                         <li tabIndex={0}>
                             <a className="justify-between">
-                                Parent
+                                Login
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                             </a>
                             <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
+                                <li><a>Login</a></li>
+                                <li><a>Register</a></li>
                             </ul>
                         </li>
                         <li><a >Item 3</a></li>
@@ -27,20 +28,21 @@ const Navbar = () => {
                 <img className='h-24' style={{ height: '250px' }} src="https://i.ibb.co/xSrmRyC/Whats-App-Image-2023-01-09-at-7-09-16-PM-removebg-preview.jpg" alt="" />
             </div>
             <div className="navbar-end hidden lg:flex">
-
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
-                    <li tabIndex={0}>
+                    {/* <li><a>SignIn</a></li> */}
+                    {/* <li tabIndex={0}>
                         <a>
                             Login
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                         </a>
                         <ul className="p-2">
-                            <li><a>Login</a></li>
-                            <li><a>Register</a></li>
+                            <li><Link to="/login">Login</Link></li>
+                            <li><Link to="/register">Register</Link></li>
                         </ul>
-                    </li>
-                    <li><a>Item 3</a></li>
+                    </li> */}
+
+                    <li> <Link to='/login'> Login</Link> </li>
+                    <li> <Link to='/register'> Register</Link> </li>
                 </ul>
             </div>
         </div>
