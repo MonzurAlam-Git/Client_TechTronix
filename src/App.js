@@ -15,6 +15,9 @@ import Dashboard from './Pages/Shared/Dashboard/Dashboard';
 import RequireAuth from './Pages/Components/RequireAuth';
 import MyBlogs from './Pages/Shared/MyBlogs';
 import Portfolio from './Pages/Shared/Portfolio';
+import MyOrders from './Pages/Shared/Dashboard/MyOrders';
+import AddReview from './Pages/Shared/Dashboard/AddReview';
+import MyProfile from './Pages/Shared/Dashboard/MyProfile';
 
 
 
@@ -49,6 +52,17 @@ function App() {
 
         {/* Dashboard Routing  */}
 
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        }>
+          <Route index element={<MyOrders></MyOrders>} />
+          <Route path="/dashboard/myReview" element={<AddReview></AddReview>} />
+          <Route path="/dashboard/myHistory" element={<MyProfile></MyProfile>} />
+        </Route>
+
+        {/* <Route path="/dashboard/users" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>} /> */}
 
         {/* Error 404 related Routing  */}
         <Route path="*" element={<NotFound></NotFound>}></Route>
