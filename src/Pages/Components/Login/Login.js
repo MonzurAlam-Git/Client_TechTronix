@@ -1,20 +1,39 @@
 import React from 'react';
-import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from "react-icons/fa";
+import Loading from '../../Shared/Loading';
 
 
 const Login = () => {
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, user_g, loading_g, error_g] = useSignInWithGoogle(auth);
     const [signInWithGithub, user_gh, loading_gh, error_gh] = useSignInWithGithub(auth);
-    const navigate = useNavigate('');
-    const onSubmit = data => {
-        navigate('/home');
+    // const navigate = useNavigate('');
+    const onSubmit = ({ email, password }) => {
+        signInWithEmailAndPassword(email, password);
     };
+
+    if (user || user_g || user_gh) {
+        navigate(from, { replace: true });
+    }
+    if (loading || loading_g || loading_gh) {
+        return <Loading></Loading>
+    }
+
     return (
         <div className='mx-96 p-16 mb-10'>
             <h1 className="text-3xl   font-bold mb-10">Log In</h1>
@@ -22,9 +41,17 @@ const Login = () => {
                 <div className='flex justify-center'>
                     <div className='w-full max-w-xs '>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <input placeholder=" Your Email" className="input input-bordered w-full max-w-xs"  {...register("email")} />
-                            <input type="password" placeholder=" Your password" className="input input-bordered w-full max-w-xs my-3" {...register("password", { required: true })} />
+                            <input placeholder=" Your Email" className="input input-bordered w-full max-w-xs"  {...register("email")
+                            } />
+
+
+                            <input type="password" placeholder=" Your password" className="input input-bordered w-full max-w-xs my-3" {...register("password")} />
+
                             {errors.exampleRequired && <span>This field is required</span>}
+
+                            <p className="text-red-600 font-bold">
+                                {error_gh ? error_gh.message : ""}
+                            </p>
                             <input className='btn btn-primary mb-5' type="submit" value="Log In" />
                         </form>
                         <p >New With TechTronix? Click <Link className='font-bold' to="/register">Register</Link>  </p>

@@ -1,5 +1,8 @@
 import React from 'react';
-import Banner from '../Banner';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import Banner from './Banner';
+
 import BuisnessSummary from './BuisnessSummary';
 import ContactUs from './ContactUs';
 import Footer from './Footer';
@@ -8,8 +11,12 @@ import Parts from './Parts';
 import Reviews from './Reviews';
 
 const Home = () => {
+    const [user] = useAuthState(auth);
     return (
         <div>
+            <div className='navbar-center mb-2'>
+                <h1 className="text-2xl font-bold text-blue-700"> Hello There! <span className='text-xl font-extrabold text-green-600'>{user?.displayName.toUpperCase()}</span>  </h1>
+            </div>
             {/* Banner  */}
             <Banner></Banner>
             {/* Parts  */}

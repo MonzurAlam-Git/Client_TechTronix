@@ -1,6 +1,5 @@
 [
     {
-        "_id" : 1,
         "name" : "Motherboard",
         "img":"https://i.ibb.co/3yhkLrZ/top-view-red-themed-circuit-board.jpg",
         "description":"Choose the best motherboard to ensure your happiness. We have best in collection, varity in model , brand and your ultimate desire",
@@ -9,7 +8,6 @@
         "price": "47000"
     },
     {
-        "_id" : 2,
         "name" : "Monitor",
         "img":"https://i.ibb.co/PWFC2H5/2023-01-03-image-21-j-1100.webp",
         "description":"Choose the best Monitor to ensure your happiness. We have best in collection, varity in model , brand and your ultimate desire",
@@ -18,7 +16,6 @@
         "price": "37000"
     },
     {
-        "_id" : 3,
         "name" : "Casing",
         "img":"https://i.ibb.co/cwB4hpd/pcCasing.jpg",
         "description":"Choose the best Casing to ensure your happiness. We have best in collection, varity in model , brand and your ultimate desire",

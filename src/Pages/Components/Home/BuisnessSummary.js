@@ -5,7 +5,7 @@ const BuisnessSummary = () => {
         <div className='mt-10 p-16 '>
             <h1 className="text-4xl font-bold text-cyan-500">Statistics Helps All to Understand</h1>
             <h1 className="text-xl">So we bring some honest Statistics</h1>
-            <div className="stats shadow mt-5 p-5">
+            <div className="stats shadow-2xl mt-5 mr-4 p-8 gap-3 ">
                 <div className="stat ml-5">
                     <div className="stat-figure text-secondary">
                         <div className="avatar">

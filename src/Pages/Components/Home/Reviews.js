@@ -23,7 +23,7 @@ const Reviews = () => {
     ]
     return (
         <div className='mt-5 '>
-            <h1 className="text-2xl text-cyan-400 font-bold">Reviews</h1>
+            <h1 className="text-4xl text-cyan-800 font-bold">Reviews</h1>
             <div className='flex justify-center'>
                 {reviews.map(review =>
                     <div>
