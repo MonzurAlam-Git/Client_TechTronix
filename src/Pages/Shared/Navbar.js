@@ -48,7 +48,8 @@ const Navbar = () => {
                         </ul>
                     </li> */}
                     {/* <li><Link to='/part/:id'>Purchase</Link></li> */}
-                    <li><Link to='/Dashboard'>Dashboard</Link></li>
+                    {user && <li><Link to='/Dashboard'>Dashboard</Link></li>}
+
                     <li><Link to='/blogs'>Blogs</Link></li>
                     <li><Link to='/portfolio'>Portfolio</Link></li>
                     {
