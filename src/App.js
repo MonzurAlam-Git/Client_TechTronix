@@ -18,6 +18,7 @@ import Portfolio from './Pages/Shared/Portfolio';
 import MyOrders from './Pages/Shared/Dashboard/MyOrders';
 import AddReview from './Pages/Shared/Dashboard/AddReview';
 import MyProfile from './Pages/Shared/Dashboard/MyProfile';
+import AllOrders from './Pages/Components/Admin/AllOrders';
 
 
 
@@ -62,8 +63,8 @@ function App() {
           <Route path="/dashboard/myProfile" element={<MyProfile></MyProfile>} />
         </Route>
 
-        {/* <Route path="/dashboard/users" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>} /> */}
-
+        {/* admin routing  */}
+        <Route path="/orders" element={<AllOrders></AllOrders>}></Route>
         {/* Error 404 related Routing  */}
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>

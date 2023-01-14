@@ -48,6 +48,7 @@ const Navbar = () => {
                         </ul>
                     </li> */}
                     {/* <li><Link to='/part/:id'>Purchase</Link></li> */}
+                    {user && <li><Link to='/orders'>AllOrders</Link></li>}
                     {user && <li><Link to='/Dashboard'>Dashboard</Link></li>}
 
                     <li><Link to='/blogs'>Blogs</Link></li>

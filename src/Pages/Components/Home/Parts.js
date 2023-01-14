@@ -6,7 +6,7 @@ import Part from './Part';
 const Parts = () => {
     const [parts, setParts] = useState([]);
     useEffect(() => {
-        fetch('https://server-techtronix.vercel.app/services')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])
